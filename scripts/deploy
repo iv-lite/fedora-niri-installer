@@ -13,7 +13,7 @@ xdg-mime default org.gnome.Nautilus.desktop x-directory/gnome-default-handler
 
 sudo cp -a ${basedir}/../etc/. /etc/
 
-sudo useradd -M greeter \
+sudo useradd -M -G greeter \
 && sudo chown -R greeter:greeter /etc/greetd/ \
 && sudo chmod -R go+r /etc/greetd/ \
 && sudo systemctl disable gdm.service \
