@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+export packages=" \
+    clamav \
+    clamd \
+    clamav-update \
+    dbus-broker \
+    flatpak \
+    firewalld \
+    ghostty \
+    greetd \
+    mako \
+    niri \
+    rofi \
+    rustup \
+    waybar \
+    wlogout \
+    xdg-desktop-portal \
+    xdg-desktop-portal-gtk \
+    xdg-desktop-portal-gnome \
+    "
