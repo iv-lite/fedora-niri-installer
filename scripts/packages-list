@@ -21,6 +21,7 @@ export packages=" \
     hyprpicker
     logiops \
     mako \
+    mate-polkit \
     network-manager-applet \
     niri \
     rofi \
