@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 export packages=" \
+    blueman \
+    bluez \
+    bluez-tools \
     code \
     clamav \
     clamd \
@@ -18,10 +21,12 @@ export packages=" \
     hyprpicker
     logiops \
     mako \
+    network-manager-applet \
     niri \
     rofi \
     rofi-calc \
     papirus-icon-theme-dark \
+    pavucontrol \
     rustup \
     waybar \
     wlogout \
