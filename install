@@ -5,7 +5,6 @@ scripts_dir="$(pwd)/scripts"
 
 ${scripts_dir}/packages-fetcher
 ${scripts_dir}/deploy
-${scripts_dir}/vscode-encryption
 
 read -r -p "Do you want to reboot ? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
