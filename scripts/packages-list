@@ -25,6 +25,7 @@ export packages=" \
     niri \
     rofi \
     rofi-calc \
+    pamixer \
     papirus-icon-theme-dark \
     pavucontrol \
     rustup \
