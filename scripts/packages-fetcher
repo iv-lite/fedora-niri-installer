@@ -19,7 +19,8 @@ sudo dnf install -y \
     dnf-plugins-core \
     ${packages}
 
-sudo setsebool -P antivirus_can_scan_system 1
+sudo setsebool -P antivirus_can_scan_system 1 \
+&& sudo setsebool -P antivirus_use_jit 1
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
