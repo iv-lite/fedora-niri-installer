@@ -14,6 +14,10 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
     | sudo tee /etc/yum.repos.d/vscode.repo \
     > /dev/null
 
+sudo dnf copr enable -y solopasha/hyprland 
+sudo dnf copr enable -y alternateved/cliphist
+sudo dnf copr enable -y scottames/ghostty
+
 sudo dnf check-update
 
 . ${basedir}/packages-list
@@ -24,7 +28,7 @@ sudo dnf install -y --skip-unavailable \
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 flatpak install -y flathub io.missioncenter.MissionCenter
-flatpak install -y flathub org.gtk.Gtk3theme.Qogir-dark
+flatpak install -y flathub org.gtk.Gtk3theme.Qogir
 
 rustup-init -y
 . "$HOME/.cargo/env"
@@ -34,12 +38,48 @@ sudo dnf install  -y \
     clang
 cargo install wayland-pipewire-idle-inhibit
 
+## rofi-calc
+sudo dnf install -y \
+    qalculate \
+    meson \
+    libtool \
+    cairo-devel \
+    rofi-devel
+
+cd ${basedir}/../storage
+git clone https://github.com/svenstaro/rofi-calc.git
+cd rofi-calc/
+meson setup build
+meson compile -C build/
+cd build
+sudo meson install
+
 ## regreet
 cd ${basedir}/../storage \
 && git clone https://github.com/rharish101/ReGreet.git \
 && cd ReGreet \
 && cargo build --release \
 && sudo cp target/release/regreet /usr/bin/
+
+## brightness control
+cd ${basedir}/../storage \
+&& git clone https://github.com/mherzberg/wlr-brightness.git \
+&& cd wlr-brightness
+git submodule update --init --recursive
+make
+sudo make install
+mkdir -p ${HOME}/.config/systemd/user/
+cp res/wlr-brightness.service ${HOME}/.config/systemd/user/
+
+## gtk theme
+sudo dnf install \
+    gtk-murrine-engine \
+    gtk2-engines \
+    sassc
+cd  ${basedir}/../storage \
+&& git clone https://github.com/vinceliuice/Qogir-theme.git \
+&& cd Qogir-theme
+./install.sh --tweaks round -c dark -l
 
 ## hardware acceleration and rpmfusion
 sudo dnf install -y \

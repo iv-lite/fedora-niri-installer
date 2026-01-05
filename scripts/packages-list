@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 export packages=" \
+    code \
     clamav \
     clamd \
     clamav-update \
@@ -11,6 +12,11 @@ export packages=" \
     greetd \
     greetd-selinux \
     google-roboto-fonts \
+    hypridle \
+    hyprlock \
+    hyprpaper \
+    hyprpicker
+    logiops \
     mako \
     niri \
     rofi \
@@ -19,7 +25,10 @@ export packages=" \
     rustup \
     waybar \
     wlogout \
+    wlroots \
+    wlr-protocols-devel \
     xdg-desktop-portal \
     xdg-desktop-portal-gtk \
-    xdg-desktop-portal-gnome
+    xdg-desktop-portal-gnome \
+    xwayland-satellite
     "

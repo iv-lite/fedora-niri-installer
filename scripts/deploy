@@ -18,6 +18,7 @@ sudo useradd -M greeter \
 && sudo systemctl enable dbus-broker.service \
 && sudo systemctl enable bluetooth.service \
 && sudo systemctl enable logid.service \
+&& systemctl --user enable --now wlr-brightness \
 && sudo usermod -aG video $USER
 
 sudo systemctl unmask firewalld
@@ -26,12 +27,15 @@ sudo systemctl enable firewalld
 
 sudo cp -a ${basedir}/../system/. /usr/lib/systemd/system/
 
+sudo useradd -M clamav
 if [ ! -d /run/clamav ]; then
     sudo mkdir /run/clamav
     sudo touch /run/clamav/clamd.ctl
+    sudo chown -R /run/clamav
 fi
 sudo setsebool -P antivirus_can_scan_system 1 \
 && sudo setsebool -P antivirus_use_jit 1 \
+&& systemctl daemon-reload \
 && sudo freshclam \
 && sudo systemctl enable clamav-freshclam.service \
-&& sudo systemctl enable clamav-clamonacc.service
+&& sudo systemctl enable clamd@scan.service
