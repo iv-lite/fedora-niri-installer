@@ -16,6 +16,7 @@ sudo cp -a ${basedir}/../etc/. /etc/
 sudo useradd -M greeter \
 && sudo chown -R greeter:greeter /etc/greetd/ \
 && sudo chmod -R go+r /etc/greetd/ \
+&& sudo systemctl disable gdm.service \
 && sudo systemctl enable greetd.service \
 && sudo systemctl enable dbus-broker.service \
 && sudo systemctl enable bluetooth.service \
