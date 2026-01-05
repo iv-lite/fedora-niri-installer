@@ -10,6 +10,7 @@ export packages=" \
     ghostty \
     greetd \
     greetd-selinux \
+    google-roboto-fonts \
     mako \
     niri \
     rofi \
