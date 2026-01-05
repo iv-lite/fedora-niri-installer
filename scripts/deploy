@@ -32,6 +32,8 @@ if [ ! -d /run/clamav ]; then
     sudo mkdir /run/clamav
     sudo touch /run/clamav/clamd.ctl
 fi
-sudo freshclam \
+sudo setsebool -P antivirus_can_scan_system 1 \
+&& sudo setsebool -P antivirus_use_jit 1 \
+&& sudo freshclam \
 && sudo systemctl enable clamav-freshclam.service \
 && sudo systemctl enable clamav-clamonacc.service

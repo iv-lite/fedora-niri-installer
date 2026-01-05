@@ -11,12 +11,12 @@ export packages=" \
     greetd \
     greetd-selinux \
     mako \
+    rustup \
     niri \
     rofi \
-    rustup \
     waybar \
     wlogout \
     xdg-desktop-portal \
     xdg-desktop-portal-gtk \
-    xdg-desktop-portal-gnome \
+    xdg-desktop-portal-gnome
     "

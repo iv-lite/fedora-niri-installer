@@ -3,6 +3,11 @@
 cd "$(dirname ${BASH_SOURCE[0]})"
 basedir="$(pwd)"
 
+sudo dnf install -y \
+    git \
+    @development-tools \
+    dnf-plugins-core
+
 ## vscode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" \
@@ -14,13 +19,7 @@ sudo dnf check-update
 . ${basedir}/packages-list
 
 sudo dnf install -y \
-    git \
-    @development-tools \
-    dnf-plugins-core \
     ${packages}
-
-sudo setsebool -P antivirus_can_scan_system 1 \
-&& sudo setsebool -P antivirus_use_jit 1
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
