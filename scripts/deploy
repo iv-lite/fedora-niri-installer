@@ -3,7 +3,7 @@
 cd "$(dirname ${BASH_SOURCE[0]})"
 basedir="$(pwd)"
 
-cp -a ${basedir}/../.config/. ${HOME}/.config/
+cp -r ${basedir}/../.config/* ${HOME}/.config/
 
 sudo localectl set-keymap --no-convert fr_CH
 
@@ -11,9 +11,8 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 xdg-mime default org.gnome.Nautilus.desktop x-directory/normal
 xdg-mime default org.gnome.Nautilus.desktop x-directory/gnome-default-handler
 
-sudo cp -a ${basedir}/../etc/. /etc/
-
-sudo useradd -M -G greeter \
+sudo useradd -M greeter \
+&& sudo cp -r ${basedir}/../etc/* /etc/ \
 && sudo chown -R greeter:greeter /etc/greetd/ \
 && sudo chmod -R go+r /etc/greetd/ \
 && sudo systemctl disable gdm.service \
@@ -34,5 +33,5 @@ if [ ! -d /run/clamav ]; then
     sudo touch /run/clamav/clamd.ctl
 fi
 sudo freshclam \
-&& sudo systemctl enable --now clamav-freshclam.service \
+&& sudo systemctl enable clamav-freshclam.service \
 && sudo systemctl enable clamav-clamonacc.service
