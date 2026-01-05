@@ -15,8 +15,6 @@ sudo useradd -M greeter \
 && sudo cp -r ${basedir}/../etc/* /etc/ \
 && sudo chown -R greeter:greeter /etc/greetd/ \
 && sudo chmod -R go+r /etc/greetd/ \
-# && sudo systemctl disable gdm \
-# && sudo systemctl enable greetd \
 && sudo systemctl enable dbus-broker.service \
 && sudo systemctl enable bluetooth.service \
 && sudo systemctl enable logid.service \

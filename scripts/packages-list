@@ -14,6 +14,8 @@ export packages=" \
     mako \
     niri \
     rofi \
+    rofi-calc \
+    papirus-icon-theme-dark \
     rustup \
     waybar \
     wlogout \
