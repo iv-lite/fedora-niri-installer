@@ -23,7 +23,7 @@ sudo setsebool -P antivirus_can_scan_system 1
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-flatpak install flathub io.missioncenter.MissionCenter
+flatpak install -y flathub io.missioncenter.MissionCenter
 
 rustup-init -y
 . "$HOME/.cargo/env"

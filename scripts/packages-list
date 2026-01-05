@@ -9,6 +9,7 @@ export packages=" \
     firewalld \
     ghostty \
     greetd \
+    greetd-selinux \
     mako \
     niri \
     rofi \
