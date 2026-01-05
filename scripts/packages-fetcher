@@ -18,7 +18,7 @@ sudo dnf check-update
 
 . ${basedir}/packages-list
 
-sudo dnf install -y \
+sudo dnf install -y --skip-unavailable \
     ${packages}
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
