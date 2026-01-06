@@ -12,7 +12,7 @@ xdg-mime default org.gnome.Nautilus.desktop x-directory/normal
 xdg-mime default org.gnome.Nautilus.desktop x-directory/gnome-default-handler
 
 sudo cp -r ${basedir}/../etc/* /etc/
-sudo cp -r ${basedir}/../sddm/Nord /usr/share/sddm/themes/Nord
+sudo cp -r ${basedir}/../sddm/where_is_my_sddm_theme /usr/share/sddm/themes/
 sudo cp -r ${basedir}/../sddm/default.conf /etc/sddm.conf.d/default.conf
 
 sudo systemctl enable dbus-broker.service
@@ -33,7 +33,7 @@ sudo useradd -M clamav
 if [ ! -d /run/clamav ]; then
     sudo mkdir /run/clamav
     sudo touch /run/clamav/clamd.ctl
-    sudo chown -R /run/clamav
+    sudo chown -R clamav:clamav /run/clamav
 fi
 sudo setsebool -P antivirus_can_scan_system 1
 sudo setsebool -P antivirus_use_jit 1

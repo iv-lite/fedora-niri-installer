@@ -13,6 +13,7 @@ export packages=" \
     firewalld \
     ghostty \
     sddm \
+    qt6-qt5compat \
     google-roboto-fonts \
     hypridle \
     hyprlock \
