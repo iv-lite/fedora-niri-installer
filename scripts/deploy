@@ -12,14 +12,10 @@ xdg-mime default org.gnome.Nautilus.desktop x-directory/normal
 xdg-mime default org.gnome.Nautilus.desktop x-directory/gnome-default-handler
 
 sudo cp -r ${basedir}/../etc/* /etc/
-sudo cp -r ${basedir}/../sddm/where_is_my_sddm_theme /usr/share/sddm/themes/
-sudo cp -r ${basedir}/../sddm/default.conf /etc/sddm.conf.d/default.conf
 
 sudo systemctl enable dbus-broker.service
 sudo systemctl enable bluetooth.service
 sudo systemctl enable logid.service
-sudo systemctl disable gdm.service
-sudo systemctl enable sddm.service
 systemctl --user enable wlr-brightness
 
 sudo usermod -aG video $USER
