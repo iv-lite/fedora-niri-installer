@@ -16,6 +16,8 @@ sudo cp -r ${basedir}/../etc/* /etc/
 sudo systemctl enable dbus-broker.service
 sudo systemctl enable bluetooth.service
 sudo systemctl enable logid.service
+sudo systemctl disable gdm.service
+sudo systemctl enable greetd.service
 systemctl --user enable wlr-brightness
 
 sudo usermod -aG video $USER

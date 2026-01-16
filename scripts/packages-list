@@ -12,7 +12,8 @@ export packages=" \
     flatpak \
     firewalld \
     ghostty \
-    sddm \
+    greetd \
+    greetd-selinux \
     qt6-qt5compat \
     google-roboto-fonts \
     hypridle \
