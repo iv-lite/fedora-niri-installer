@@ -95,9 +95,9 @@ binds {
 }
 
 layout {
-    gaps 8
+    gaps 12
     center-focused-column "never"
-    // always-center-single-column
+    always-center-single-column
     empty-workspace-above-first
     default-column-display "normal"
     background-color "#2b303cd6"

@@ -58,7 +58,7 @@ sudo meson install
 cd ${basedir}/../storage \
 && git clone https://github.com/rharish101/ReGreet.git \
 && cd ReGreet \
-&& cargo build --release \
+&& cargo build --all-features --release \
 && sudo cp target/release/regreet /usr/bin/
 
 ## brightness control
@@ -80,6 +80,7 @@ cd  ${basedir}/../storage \
 && git clone https://github.com/vinceliuice/Qogir-theme.git \
 && cd Qogir-theme
 ./install.sh --tweaks round -c dark -l
+sudo cp -r $HOME/.themes/Qogir-Round-Dark /usr/share/themes
 
 ## hardware acceleration and rpmfusion
 sudo dnf install -y \
