@@ -23,11 +23,9 @@ sudo systemctl enable firewalld
 
 sudo cp -a ${basedir}/../system/. /usr/lib/systemd/system/
 
-sudo useradd -M clamav
 if [ ! -d /run/clamav ]; then
     sudo mkdir /run/clamav
     sudo touch /run/clamav/clamd.ctl
-    sudo chown -R clamav:clamav /run/clamav
 fi
 sudo setsebool -P antivirus_can_scan_system 1
 sudo setsebool -P antivirus_use_jit 1
