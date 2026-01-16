@@ -20,8 +20,6 @@ sudo systemctl disable gdm.service
 sudo systemctl enable greetd.service
 systemctl --user enable wlr-brightness
 
-sudo usermod -aG video $USER
-
 sudo systemctl unmask firewalld
 sudo systemctl enable firewalld
 
