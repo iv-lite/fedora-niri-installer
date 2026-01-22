@@ -8,6 +8,7 @@ export packages=" \
     clamav \
     clamd \
     clamav-update \
+    clamtk
     dbus-broker \
     flatpak \
     firewalld \
