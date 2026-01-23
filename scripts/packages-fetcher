@@ -60,6 +60,10 @@ cd ${basedir}/../storage \
 && cd ReGreet \
 && cargo build --all-features --release \
 && sudo cp target/release/regreet /usr/bin/
+sudo mkdir /var/log/regreet
+sudo mkdir /var/lib/regreet
+sudo chown -R greetd:greetd /var/log/regreet
+sudo chown -R greetd:greetd /var/lib/regreet
 
 ## brightness control
 cd ${basedir}/../storage \
