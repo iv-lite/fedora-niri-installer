@@ -1,5 +1,3 @@
-spawn-sh-at-startup "regreet; niri msg action quit --skip-confirmation"
-
 hotkey-overlay {
     skip-at-startup
 }
@@ -90,3 +88,4 @@ layout {
 }
 
 spawn-sh-at-startup "hyprpaper"
+spawn-sh-at-startup "regreet; niri msg action quit --skip-confirmation"
