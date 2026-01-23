@@ -31,3 +31,6 @@ sudo setsebool -P antivirus_use_jit 1
 sudo systemctl daemon-reload
 sudo freshclam
 sudo systemctl enable clamav-freshclam.service
+
+# sudo grubby --update-kernel=ALL --args=amdgpu.abmlevel=0
+# sudo grub2-mkconfig -o /boot/grub2/grub.cfg

@@ -87,5 +87,15 @@ layout {
     }
 }
 
+environment {
+    GTK_IM_MODULE "simple"
+    GTK_THEME "Qogir-Round-Dark"
+    QT_QPA_PLATFORM "wayland;xcb"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    XDG_SESSION_TYPE "wayland"
+    XDG_SESSION_DESKTOP "niri"
+    XDG_CURRENT_DESKTOP "niri"
+}
+
 spawn-sh-at-startup "hyprpaper"
 spawn-sh-at-startup "regreet; niri msg action quit --skip-confirmation"
