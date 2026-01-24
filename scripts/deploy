@@ -16,7 +16,7 @@ sudo systemctl enable bluetooth.service
 sudo systemctl enable logid.service
 sudo systemctl disable gdm.service
 sudo systemctl enable greetd.service
-systemctl --user enable wlr-brightness
+# systemctl --user enable wlr-brightness
 
 sudo systemctl unmask firewalld
 sudo systemctl enable firewalld
