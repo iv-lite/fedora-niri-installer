@@ -67,13 +67,9 @@ sudo chown -R greetd:greetd /var/lib/regreet
 
 ## brightness control
 cd ${basedir}/../storage \
-&& git clone https://github.com/mherzberg/wlr-brightness.git \
-&& cd wlr-brightness
-git submodule update --init --recursive
-make
-sudo make install
-mkdir -p ${HOME}/.config/systemd/user/
-cp res/wlr-brightness.service ${HOME}/.config/systemd/user/
+&& git clone https://github.com/MaxVerevkin/wl-gammarelay-rs.git \
+&& cd wl-gammarelay-rs \
+&& cargo install wl-gammarelay-rs --locked
 
 ## gtk theme
 sudo dnf install \

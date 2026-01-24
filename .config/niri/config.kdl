@@ -83,8 +83,8 @@ binds {
     XF86AudioNext allow-when-locked=true { spawn-sh "playerctl next"; }
     XF86AudioPrev allow-when-locked=true { spawn-sh "playerctl previous"; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.increase 0.1"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.decrease 0.1"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.05"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.05"; }
 
     Mod+Shift+L { spawn "hyprlock"; }
     Ctrl+Alt+F { spawn "nautilus"; }
@@ -167,8 +167,8 @@ layout {
 
 spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 spawn-at-startup "waybar"
-spawn-at-startup "wlr-brightness"
 spawn-sh-at-startup "blueman"
+spawn-sh-at-startup "wl-gammarelay-rs"
 spawn-sh-at-startup "mako"
 spawn-sh-at-startup "hypridle"
 spawn-sh-at-startup "hyprpaper"
