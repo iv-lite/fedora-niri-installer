@@ -63,7 +63,8 @@ binds {
     Super+Alt+Up { move-window-up; }
     Super+Alt+Down { move-window-down; }
 
-    // Mod+Shift+W { consume-window-into-column; }
+    Mod+Shift+C { consume-window-into-column; }
+    Mod+Shift+E { expel-window-from-column; }
     Mod+Shift+Left { move-column-to-monitor-left; }
     Mod+Shift+Right { move-column-to-monitor-right; }
     Mod+Shift+Up { move-column-to-workspace-up; }
