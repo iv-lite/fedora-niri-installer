@@ -3,7 +3,7 @@
 cd "$(dirname ${BASH_SOURCE[0]})"
 basedir="$(pwd)"
 
-cp -r ${basedir}/../.config/* ${HOME}/.config/
+cp -r ${basedir}/../home/.config/* ${HOME}/.config/
 
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
 xdg-mime default org.gnome.Nautilus.desktop x-directory/normal
