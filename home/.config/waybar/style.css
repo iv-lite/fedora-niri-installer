@@ -1,5 +1,5 @@
-window * {
-    font-family: "Roboto Mono";
+* {
+    font-family: "Roboto", "Font Awesome 6 Free";
     font-size: 1.25rem;
     padding: .5rem;
 }
