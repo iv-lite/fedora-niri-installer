@@ -16,6 +16,7 @@ export packages=" \
     greetd \
     greetd-selinux \
     qt6-qt5compat \
+    fontawesome-fonts-all \
     google-roboto-fonts \
     hypridle \
     hyprlock \
